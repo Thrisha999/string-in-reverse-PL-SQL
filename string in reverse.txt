@@ -1,0 +1,24 @@
+--Query:To print string in reverse
+
+--PL/SQL Block:
+declare
+	n varchar(50);
+	m varchar(50);
+	len int;
+begin
+	n:='&string';
+	len:=length(n);
+	for i in reverse 1..len
+	loop
+	 m:=m||substr(n,i,1);
+	end loop;
+	dbms_output.put_line('reverse: '||m);
+end;
+/
+--output:
+Enter value for string: mbu
+old   6:        n:='&string';
+new   6:        n:='mbu';
+reverse: ubm
+
+PL/SQL procedure successfully completed.
